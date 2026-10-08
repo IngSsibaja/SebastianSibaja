@@ -1,0 +1,109 @@
+*Propósito:
+
+1.Crear un orden dentro sistema del Hospital San Rafael, en el cuál el nuevo sistema se maneje por las 4 operaciones básicas de la manipulación de datos, es decir, que pueda manejar de una forma más satisfactoria el registrar los datos de nuevos pacientes (llevando un orden de uno tras otro), que mejore también la experiencia a la hora de querer encontrar los datos de un paciente (Ingresando la cédula del paciente aparecerán todos sus datos), que desarrolle una forma de poder corregir errores ortográficos que se cometieron cuando se ingresó un nuevo paciente (Pidiéndole al sistema la opción de corregir e ingresando el nuevo texto se corrige), y por último que perfeccione la extracción de un paciente al ya haber sido atendido (Como terminó su atención, es eliminado del sistema sin alterar ningún orden de la lista).
+
+*Datos de entrada:
+
+Nombre del dato: | Tipo de dato:
+--------------------------------
+n                 | byte
+posicion_paciente | Byte      | y arreglo
+nombre_paciente   | String    | y arreglo
+cedula_paciente   | String    | y arreglo
+consulta_paciente | String    | y arreglo
+gravedad_paciente | String    | y arreglo
+respuesta         | string
+numero            | byte
+buscador          | string
+nombre            | string
+cedula            | string
+consulta          | string
+gravedad          | string
+
+
+*Reglas:
+
+Todos los datos deben de ser válidos con su respectivo valor definido, de lo contrario la validación que se hace volverá a preguntar los datos hasta que estén correctos.
+Al agregar pacientes estos deben de ser agregados, junto a sus respectivos datos, en el orden en el que van siendo ingresados.
+El método de búsqueda será mediante el número de cédula (debido a que cada paciente se lo debe de saber si o si), si la cédula ingresada no es correcta preguntará si desea ingresar otra o salir del apartado de búsqueda, por otro lado, si esta es correcta mostrará todos los datos de la persona.
+La forma de corregir algún error deberá pedir confirmación y realmente desea poner el nuevo dato, si no lo desea lo devolverá al menú,  de lo contrario, el nuevo dato será actualizado.
+Al eliminar un paciente el orden del arreglo no deberá ser alterado, se seguirá manteniendo el mismo orden pero sin la posición de la persona eliminada .
+
+*Validaciones:
+
+Se debe confirmar si nombre, cédula, consulta, y gravedad si fueron ingresadas como se definió la variable, es decir, string.
+También se debe asegurar que nombre, cédula, consulta, y gravedad no sean cadenas de texto vacías.}
+Se debe validar si posición fue ingresado y si corresponde a un dato byte.
+También debo validar que este dato Byte sea mayor a 0
+Verificar que las cédulas sean distintas.
+
+*Pasos(Procesos):
+
+Defino los arreglos y variables previamente pensadas que serían necesarias en el programa para guardar los datos de los pacientes usando el tamaño que se calculó.
+Creo el menú principal con las opciones de agregar, buscar, modificar, eliminar y mostrar la lista para que la persona que lo manipule pueda hacerlo con libertad y orden.
+Creo los métodos necesarios para cada una de las acciones que va a realizar el programa del Hospital.
+Le agrego las validaciones a la hora de registrar para que no queden campos vacíos, las cédulas no se repitan y la posición se ponga de forma automática.
+Le agrego al menú los métodos en cada espacio usando un switch para que al marcar un número se ejecute la acción pedida.
+
+*Pruebas(Salidas):
+
+Ejemplo de uso:
+
+ --------Terminal---------
+
+Menú:
+1. Agregar paciente
+2. Buscar pacientes
+3. Modificar paciente
+4. Eliminar paciente
+5. Mostrar lista de pacientes
+Que opción desea realizar?:
+1
+
+---Agreguemos un paciente---
+
+Ingrese el nombre del paciente:
+sebas
+Ingrese la cédula del paciente:
+1
+Ingrese la consulta del paciente:
+enfermo
+Ingrese la gravedad del paciente:
+5
+Paciente agregado exitosamente.
+Menú:
+1. Agregar paciente
+2. Buscar pacientes
+3. Modificar paciente
+4. Eliminar paciente
+5. Mostrar lista de pacientes
+Que opción desea realizar?:
+5
+
+---Lista de pacientes registrados---
+
+Posición: 1
+Nombre: sebas
+Cédula: 1
+Consulta: enfermo
+Gravedad: 5
+------------------------
+Menú:
+1. Agregar paciente
+2. Buscar pacientes
+3. Modificar paciente
+4. Eliminar paciente
+5. Mostrar lista de pacientes
+Que opción desea realizar?:
+2
+
+---Busquemos un paciente---
+
+Ingresa el número de cédula del paciente que deseas encontrar:
+1
+
+Posición: 1
+Nombre: sebas
+Cédula: 1
+Consulta: enfermo
+Gravedad: 5
